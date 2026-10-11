@@ -1,0 +1,10 @@
+# Rendu par AMP a chaque demarrage depuis AMP_reglages-triplea.txt (onglet Configuration).
+# Une ligne cle=valeur par reglage, lue par lancer-triplea.sh (et par installer-triplea.sh
+# a l'Update si AMP ne lui passe pas les valeurs). Ne pas modifier ici : changer les reglages dans AMP.
+# Les champs de texte libre viennent en dernier : la premiere ligne d'une cle compte.
+memoire={{memoire}}
+maj_cartes={{maj_cartes}}
+version={{version}}
+cartes={{cartes}}
+commentaire={{commentaire}}
+nom_bot={{nom_bot}}

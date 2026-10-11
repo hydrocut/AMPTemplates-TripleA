@@ -1,0 +1,90 @@
+[
+    {
+        "DisplayName": "Nom du bot dans le lobby",
+        "Category": "TripleA:public",
+        "Subcategory": "Lobby:groups:1",
+        "Description": "Nom sous lequel le serveur apparaît dans la liste des parties du lobby officiel de TripleA (colonne Host) et dans le chat de la partie. TripleA impose qu'il commence par « Bot » et fasse de 7 à 21 caractères, sinon le serveur refuse de démarrer. Au démarrage : espaces remplacés par _, accents courants retirés (é → e), seuls lettres, chiffres, _ et - gardés, « Bot_ » ajouté devant si besoin, coupé à 21 caractères (message dans la console). Choisir un nom que personne d'autre n'utilise dans le lobby.",
+        "Keywords": "nom,bot,name,lobby,host,serveur",
+        "FieldName": "nom_bot",
+        "InputType": "text",
+        "ParamFieldName": "nom_bot",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "Bot_TeamKit_FR",
+        "Placeholder": "Bot_TeamKit_FR",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Commentaire dans le lobby",
+        "Category": "TripleA:public",
+        "Subcategory": "Lobby:groups:1",
+        "Description": "Court texte affiché dans la colonne Comments de la liste des parties du lobby. 14 caractères au plus (limite de TripleA : au-delà, le serveur refuse de démarrer, il est donc coupé ici). Lettres sans accent, chiffres et ponctuation simple : les accents courants sont retirés au démarrage. Vide = pas de commentaire.",
+        "Keywords": "commentaire,comment,lobby,description",
+        "FieldName": "commentaire",
+        "InputType": "text",
+        "ParamFieldName": "commentaire",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "TeamKit FR",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Cartes à installer",
+        "Category": "TripleA:public",
+        "Subcategory": "Cartes:map:2",
+        "Description": "Cartes (jeux) que le serveur propose, téléchargées à chaque Update depuis le catalogue officiel de TripleA (dépôts github.com/triplea-maps). Noms séparés par des virgules, tels qu'ils figurent dans le catalogue (champ mapName de https://prod.triplea-game.org/support/maps/listing, par exemple world_war_ii_classic ; « World War II Classic » marche aussi). Par défaut : World War II Classic (4 Mo), Revised (5 Mo), v3 (9 Mo, scénarios 1941 et 1942) et Global 1940 (27 Mo). Un nom inconnu est signalé et ignoré. Une carte retirée de la liste n'est PAS effacée (les parties sauvegardées en ont besoin) : la supprimer à la main dans le dossier cartes. Les joueurs doivent avoir la même carte dans leur jeu (Download Maps).",
+        "Keywords": "cartes,maps,jeux,world war,classic,revised,global,telechargement",
+        "FieldName": "cartes",
+        "InputType": "text",
+        "ParamFieldName": "cartes",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "world_war_ii_classic, world_war_ii_revised, world_war_ii_v3, world_war_ii_global",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mettre à jour les cartes à chaque Update",
+        "Category": "TripleA:public",
+        "Subcategory": "Cartes:map:2",
+        "Description": "Coché = à chaque Update, une carte déjà installée est retéléchargée si son auteur l'a modifiée depuis (date du dernier changement donnée par le catalogue officiel), comme le font les bots officiels de TripleA. Les joueurs qui ont la carte à jour dans leur jeu sont ainsi sur la même version que le serveur. Décoché = une carte installée n'est plus jamais touchée.",
+        "Keywords": "mise a jour,cartes,maps,update",
+        "FieldName": "maj_cartes",
+        "InputType": "checkbox",
+        "ParamFieldName": "maj_cartes",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "true",
+        "EnumValues": {
+            "False": "false",
+            "True": "true"
+        }
+    },
+    {
+        "DisplayName": "Version de TripleA",
+        "Category": "TripleA:public",
+        "Subcategory": "Version:system_update:3",
+        "Description": "Vide = chaque Update installe la DERNIÈRE version publiée sur github.com/triplea-game/triplea/releases (celle que le site triplea-game.org fait télécharger aux joueurs). Sinon, numéro exact d'une version (par exemple 2026-10.16.15815) pour rester dessus. Depuis juin 2026, TripleA ne vérifie plus que le jeu du joueur et le serveur ont la même version : des versions trop éloignées peuvent échouer en pleine partie. Le numéro installé est écrit dans la console au démarrage ; conseiller aux joueurs la même version.",
+        "Keywords": "version,mise a jour,update,release",
+        "FieldName": "version",
+        "InputType": "text",
+        "ParamFieldName": "version",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "",
+        "Placeholder": "vide = dernière version",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Mémoire de Java",
+        "Category": "TripleA:public",
+        "Subcategory": "Version:system_update:3",
+        "Description": "Mémoire maximale donnée au serveur (option -Xmx de Java). Les bots officiels tournent avec 128 Mo, et TripleA conseille d'augmenter si l'IA manque de mémoire sur les grandes cartes en fin de partie. 512 Mo convient aux cartes proposées par défaut, 1 Go pour les très grandes cartes (Global 40 UHD, Total World War...). Prévoir environ 200 Mo de plus pour la limite mémoire de l'instance.",
+        "Keywords": "memoire,ram,java,xmx",
+        "FieldName": "memoire",
+        "InputType": "enum",
+        "ParamFieldName": "memoire",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "512",
+        "EnumValues": {
+            "256": "256 Mo",
+            "512": "512 Mo (recommandé)",
+            "1024": "1 Go (très grandes cartes)",
+            "2048": "2 Go"
+        }
+    }
+]

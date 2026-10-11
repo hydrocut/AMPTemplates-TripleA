@@ -1,0 +1,43 @@
+[
+    {
+        "UpdateStageName": "Script d'installation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/hydrocut/AMPTemplates-TripleA/main/scripts/installer-triplea.sh",
+        "UpdateSourceArgs": "installer-triplea.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Script de lancement",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/hydrocut/AMPTemplates-TripleA/main/scripts/lancer-triplea.sh",
+        "UpdateSourceArgs": "lancer-triplea.sh",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Modele des reglages (AMP_reglages-triplea.txt)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/hydrocut/AMPTemplates-TripleA/main/scripts/AMP_reglages-triplea.txt",
+        "UpdateSourceArgs": "AMP_reglages-triplea.txt",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Telechargement du serveur TripleA, de Java (Temurin) et des cartes",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "\"{{$FullBaseDir}}installer-triplea.sh\" \"{{$FullBaseDir}}\" \"{{version}}\" \"{{cartes}}\" \"{{maj_cartes}}\"",
+        "SkipOnFailure": false
+    }
+]

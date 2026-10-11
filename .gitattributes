@@ -1,0 +1,7 @@
+# Les scripts et le modele des reglages sont lus par bash et perl dans le conteneur : toujours en LF.
+*.sh text eol=lf
+*.txt text eol=lf
+*.kvp text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf

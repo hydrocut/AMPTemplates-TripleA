@@ -1,0 +1,17 @@
+# Ce depot ne contient que le template : TripleA (GPL-3.0), Java (Temurin) et les cartes
+# sont telecharges a l'Update dans AMP. Rien de ce qui suit ne doit y entrer.
+triplea-serveur/
+triplea-serveur.nouveau/
+java/
+java.nouveau/
+cartes/
+donnees/
+.telechargement/
+.cartes-installees
+reglages-triplea.txt
+*.zip
+*.tar.gz
+__pycache__/
+
+# Notes internes de TeamKit (essais, etapes), pas dans le depot public
+FAISABILITE.md

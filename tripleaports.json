@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 3300,
+        "Ref": "GamePort",
+        "Name": "Port du jeu",
+        "Description": "Seul port a ouvrir, en TCP, et il DOIT etre joignable depuis internet : au demarrage, le lobby officiel de TripleA (prod.triplea-game.org) essaie de s'y connecter ; s'il n'y arrive pas en 10 secondes, il refuse de lister la partie et le bot s'arrete (« Your computer is not reachable from the internet »). 3300 est le port par defaut de TripleA pour heberger. Les joueurs du lobby s'y connectent directement, ceux qui ont l'adresse aussi (Play Online > Connect to Networked Game)."
+    }
+]

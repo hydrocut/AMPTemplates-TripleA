@@ -1,0 +1,8 @@
+[
+    {
+        "ConfigFile": "reglages-triplea.txt",
+        "ConfigType": "template",
+        "AutoMap": true,
+        "ConfigFileTemplate": "triplea/AMP_reglages-triplea.txt"
+    }
+]
